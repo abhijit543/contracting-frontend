@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Autoplay } from "swiper/modules";
 import WOW from "wow.js";
@@ -10,6 +10,8 @@ import "./section1.css";
 
 export default function Section1() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   useEffect(() => {
     const wow = new WOW({ live: false });
     wow.init();
@@ -22,10 +24,7 @@ export default function Section1() {
         <Swiper
           modules={[Navigation, Thumbs]}
           thumbs={{ swiper: thumbsSwiper }}
-          navigation={{
-            nextEl: ".swiper-index-btn-next",
-            prevEl: ".swiper-index-btn-prev",
-          }}
+          navigation={{ nextEl: ".swiper-index-btn-next", prevEl: ".swiper-index-btn-prev" }}
           autoplay={{ delay: 4000 }}
           loop={true}
           className="gallery-top sec-1-height"
@@ -104,12 +103,13 @@ export default function Section1() {
               </div>
             </div>
           </SwiperSlide>
+          {/* Custom navigation buttons */}
         </Swiper>
       </div>
 
       <div className="sec-1-banner-position-a">
         <div className="container-fluid">
-          <div className="row">
+          <div className="row justify-content-end">
             {/* Static Thumbnails */}
             <div className="col-lg-9 col-md-10 index-thumb-padding">
               <div className="gallery-thumbs">
@@ -147,9 +147,13 @@ export default function Section1() {
                       </div>
                     </div>
                   </SwiperSlide>
-                  <div className="swiper-index-btn-prev"></div>
-                  <div className="swiper-index-btn-next"></div>
                 </Swiper>
+                <div ref={prevRef} className="swiper-index-btn-prev">
+                  Prev
+                </div>
+                <div ref={nextRef} className="swiper-index-btn-next">
+                  Next
+                </div>
               </div>
             </div>
           </div>

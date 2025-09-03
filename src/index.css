@@ -2123,6 +2123,9 @@ button:focus:not(:focus-visible){
     top: 10%;
     left: 8%;
     color: #ffffff;
+        background: url(../src/assets/img/swiper-arrow/right-arrow.png) center center no-repeat;
+    display: block;
+    z-index: 9999;
 }
 .swiper-index-btn-prev::after{
     color: #ffffff;
@@ -2131,4 +2134,33 @@ button:focus:not(:focus-visible){
 }
 .gallery-thumbs .swiper-slide {
     opacity: 100%;
+}
+
+
+
+
+
+.custom-prev,
+.custom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.custom-prev:hover,
+.custom-next:hover {
+  background: rgba(255, 102, 0, 0.8);
+}
+.custom-prev {
+  left: 10px;
+}
+.custom-next {
+  right: 10px;
 }
