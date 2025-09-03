@@ -1,17 +1,16 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Autoplay } from "swiper/modules";
 import WOW from "wow.js";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/thumbs"; // ✅ use bundle since no /css/ folder
+import "swiper/css/thumbs";
 import "animate.css";
 import "./section1.css";
 
 export default function Section1() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+
   useEffect(() => {
     const wow = new WOW({ live: false });
     wow.init();
@@ -22,9 +21,9 @@ export default function Section1() {
       <div className="sec-1-wrapper">
         {/* Main Swiper */}
         <Swiper
-          modules={[Navigation, Thumbs]}
+          modules={[Navigation, Thumbs, Autoplay]}
           thumbs={{ swiper: thumbsSwiper }}
-          navigation={{ nextEl: ".swiper-index-btn-next", prevEl: ".swiper-index-btn-prev" }}
+          navigation={true}   // ✅ Just enable built-in navigation
           autoplay={{ delay: 4000 }}
           loop={true}
           className="gallery-top sec-1-height"
@@ -37,14 +36,22 @@ export default function Section1() {
                   <div className="col-12">
                     <div className="sec-1-banner-pa">
                       <p className="banner-s">Best Interior Design</p>
-                      <div className="wow animate__animated animate__fadeInUp" data-wow-duration="1s">
+                      <div
+                        className="wow animate__animated animate__fadeInUp"
+                        data-wow-duration="1s"
+                      >
                         <h1 className="banner-h1">
                           Building <span>Awesome</span>
                           <br /> Interiors Vision
                         </h1>
-                        <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
+                        <p className="banner-p">
+                          We believe that a well-designed space has the power
+                          to transform lives, evoke emotions, and enhance
+                          experiences. Our team of talented designers.
+                        </p>
                         <a href="/" className="btn-primary">
-                          Recent Project <i className="fa-solid fa-arrow-right-long"></i>
+                          Recent Project{" "}
+                          <i className="fa-solid fa-arrow-right-long"></i>
                         </a>
                       </div>
                     </div>
@@ -62,14 +69,22 @@ export default function Section1() {
                   <div className="col-12">
                     <div className="sec-1-banner-pa">
                       <p className="banner-s">Best Interior Design</p>
-                      <div className="wow animate__animated animate__fadeInUp" data-wow-duration="1s">
+                      <div
+                        className="wow animate__animated animate__fadeInUp"
+                        data-wow-duration="1s"
+                      >
                         <h1 className="banner-h1">
                           Creating <span>Inspiring</span>
                           <br /> Interiors Vision
                         </h1>
-                        <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
+                        <p className="banner-p">
+                          We believe that a well-designed space has the power
+                          to transform lives, evoke emotions, and enhance
+                          experiences. Our team of talented designers.
+                        </p>
                         <a href="/" className="btn-primary">
-                          Recent Project <i className="fa-solid fa-arrow-right-long"></i>
+                          Recent Project{" "}
+                          <i className="fa-solid fa-arrow-right-long"></i>
                         </a>
                       </div>
                     </div>
@@ -86,15 +101,23 @@ export default function Section1() {
                 <div className="row">
                   <div className="col-12">
                     <div className="sec-1-banner-pa">
-                      <div className="wow animate__animated animate__fadeInUp" data-wow-duration="1s">
+                      <div
+                        className="wow animate__animated animate__fadeInUp"
+                        data-wow-duration="1s"
+                      >
                         <p className="banner-s">Best Interior Design</p>
                         <h1 className="banner-h1">
                           Decorate <span>Beautiful</span>
                           <br /> Living Room
                         </h1>
-                        <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
+                        <p className="banner-p">
+                          We believe that a well-designed space has the power
+                          to transform lives, evoke emotions, and enhance
+                          experiences. Our team of talented designers.
+                        </p>
                         <a href="/" className="btn-primary">
-                          Recent Project <i className="fa-solid fa-arrow-right-long"></i>
+                          Recent Project{" "}
+                          <i className="fa-solid fa-arrow-right-long"></i>
                         </a>
                       </div>
                     </div>
@@ -103,7 +126,6 @@ export default function Section1() {
               </div>
             </div>
           </SwiperSlide>
-          {/* Custom navigation buttons */}
         </Swiper>
       </div>
 
@@ -113,9 +135,17 @@ export default function Section1() {
             {/* Static Thumbnails */}
             <div className="col-lg-9 col-md-10 index-thumb-padding">
               <div className="gallery-thumbs">
-                <Swiper onSwiper={setThumbsSwiper} spaceBetween={10} slidesPerView={3} freeMode={true} watchSlidesProgress={true} modules={[Navigation, Thumbs]} className="mySwiper">
+                <Swiper
+                  onSwiper={setThumbsSwiper}
+                  spaceBetween={10}
+                  slidesPerView={3}
+                  freeMode={true}
+                  watchSlidesProgress={true}
+                  modules={[Thumbs]}
+                  className="mySwiper"
+                >
                   <SwiperSlide>
-                    <div className=" p-0 index-slide-thumb-width">
+                    <div className="p-0 index-slide-thumb-width">
                       <div className="sec-1-thumb-wrap sec-1-thumb-img-1">
                         <h1 className="sec-1-thumb-wrap-num">01</h1>
                         <div>
@@ -126,7 +156,7 @@ export default function Section1() {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className=" p-0 index-slide-thumb-width">
+                    <div className="p-0 index-slide-thumb-width">
                       <div className="sec-1-thumb-wrap sec-1-thumb-img-2">
                         <h1 className="sec-1-thumb-wrap-num">02</h1>
                         <div>
@@ -137,7 +167,7 @@ export default function Section1() {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className=" p-0 index-slide-thumb-width">
+                    <div className="p-0 index-slide-thumb-width">
                       <div className="sec-1-thumb-wrap sec-1-thumb-img-3">
                         <h1 className="sec-1-thumb-wrap-num">03</h1>
                         <div>
@@ -148,12 +178,6 @@ export default function Section1() {
                     </div>
                   </SwiperSlide>
                 </Swiper>
-                <div ref={prevRef} className="swiper-index-btn-prev">
-                  Prev
-                </div>
-                <div ref={nextRef} className="swiper-index-btn-next">
-                  Next
-                </div>
               </div>
             </div>
           </div>

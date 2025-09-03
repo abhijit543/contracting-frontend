@@ -3432,4 +3432,10 @@ Copyright (c) 2014 Daniel Eden
         margin-left: 0;
     }
 }
+.nav-main-b {
+    position: fixed;
+    width: 100%;
+    background: transparent !important;
+    z-index: 99999;
+}
 

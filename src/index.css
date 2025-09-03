@@ -210,12 +210,7 @@ li a:hover {
 /* Common*/
 /*NavBar Starts*/
 
-.nav-main-b {
-    position: fixed;
-    width: 100%;
-    background: transparent !important;
-    z-index: 99999;
-}
+
 .index-nav-drop-a:active{
     background-color: #fff;
     color: var(--color-primary);
@@ -266,9 +261,7 @@ li a:hover {
 .sec-1-banner-pr {
     position: relative;
 }
-.index-thumb-padding{
-    padding: 0;
-}
+
 .banner-s {
     color: #e3e3e3;
 }
@@ -324,11 +317,7 @@ li a:hover {
     position: relative !important;
 }
 
-.sec-1-banner-position-a {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+
 
 
 .section-2 {
@@ -2099,42 +2088,10 @@ button:focus:not(:focus-visible){
 /*Slider*/
 
 /*Index page slides*/
-.gallery-thumbs .swiper-slide {
-    opacity: 0.4;
-}
-.gallery-thumbs .swiper-slide-thumb-active {
-    opacity: 1;
-}
 
-.swiper-index-btn-next::after, .swiper-index-btn-prev::after {
-    position: absolute;
-    height: 45px;
-    width: 45px;
-    content: "";
-    border-radius: 50%;
-    border: 1px solid #d9d9d9;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-}
-.swiper-index-btn-next::after{
-    top: 10%;
-    left: 8%;
-    color: #ffffff;
-        background: url(../src/assets/img/swiper-arrow/right-arrow.png) center center no-repeat;
-    display: block;
-    z-index: 9999;
-}
-.swiper-index-btn-prev::after{
-    color: #ffffff;
-    left: 8%;
-    top: 45%;
-}
-.gallery-thumbs .swiper-slide {
-    opacity: 100%;
-}
+
+
+
 
 
 

@@ -41,3 +41,20 @@ height: 100%;
 {
     color: #fff;
 }
+.sec-1-banner-position-a {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.index-thumb-padding{
+    padding: 0;
+}
+.gallery-thumbs .swiper-slide {
+    opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+.gallery-thumbs .swiper-slide {
+    opacity: 100%;
+}
