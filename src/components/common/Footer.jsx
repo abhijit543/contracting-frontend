@@ -1,7 +1,6 @@
 // src/components/common/Footer.jsx
 import React from "react";
 
-
 // adjust the path as per your project
 import footerLogo from "../../assets/img/footer-logo.svg";
 
@@ -63,7 +62,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <a href="mailto:krishna@example.com" className="ftr-sec-a-sec-2">
-                      krishna@example.com
+                      ethreal@example.com
                     </a>
                     <p>Email us for query</p>
                   </div>
@@ -100,11 +99,7 @@ export default function Footer() {
                   <h5>News Letter</h5>
                   <p>Subscribe to our newsletter & get all the latest news.</p>
                   <div className="ftr-inpt-wrapper">
-                    <input
-                      type="text"
-                      placeholder="Enter your email address"
-                      className="footer-input"
-                    />
+                    <input type="text" placeholder="Enter your email address" className="footer-input" />
                     <button className="footer-btn">
                       <i className="fa-solid fa-arrow-right footer-input-icon"></i>
                     </button>
@@ -120,7 +115,7 @@ export default function Footer() {
       <div className="footer-row-2">
         <div className="container">
           <div className="ftr-row-2-wrapper">
-            <p className="m-0">Developed By &copy; Krishna Moorthy M</p>
+            <p className="m-0">Developed By &copy; Ethreal</p>
             <ul className="footer-r-2-wrapper">
               <li>
                 <a href="/terms.html" className="footer-r-2-a">

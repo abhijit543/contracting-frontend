@@ -1,18 +1,29 @@
 // Header.jsx
-import { useState } from "react";
-import { Link } from "react-router-dom"; // if you are using react-router
-import logo from "../../assets/img/logo.svg"; // adjust the path
-
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/img/logo.svg";
+import "./Common.css";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isSticky, setIsSticky] = useState(false);
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 200) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <header>
-      <nav className="navbar navbar-expand-lg py-4 navbar-dark bg-dark nav-main-b header-nav-mob">
+      <nav className={`navbar navbar-expand-lg py-4 bg-dark navbar-dark  nav-main-b header-nav-mob ${isSticky ? "sticky-nav-scroll" : ""}`}>
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="Logo" />
@@ -30,7 +41,7 @@ export default function Header() {
                 </Link>
               </li>
 
-              {/* <li className="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle index-nav-a" to="/about-us" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   About Us
                 </Link>
@@ -52,7 +63,6 @@ export default function Header() {
                   </li>
                 </ul>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link index-nav-a" to="/services">
                   Service
@@ -73,6 +83,10 @@ export default function Header() {
                   Before After
                 </Link>
               </li>
+              {/*
+            
+             
+      
               <li className="nav-item">
                 <Link className="nav-link index-nav-a" to="/blog">
                   Blog

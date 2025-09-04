@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "animate.css";
-import "./section1.css";
+import "./Home.css";
 
 export default function Section1() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -20,14 +20,7 @@ export default function Section1() {
     <section className="section1">
       <div className="sec-1-wrapper">
         {/* Main Swiper */}
-        <Swiper
-          modules={[Navigation, Thumbs, Autoplay]}
-          thumbs={{ swiper: thumbsSwiper }}
-          navigation={true}   // ✅ Just enable built-in navigation
-          autoplay={{ delay: 4000 }}
-          loop={true}
-          className="gallery-top sec-1-height"
-        >
+        <Swiper modules={[Navigation, Thumbs, Autoplay]} thumbs={{ swiper: thumbsSwiper }} navigation={true} autoplay={{ delay: 4000 }} loop={true} className="gallery-top sec-1-height">
           {/* Slide 1 */}
           <SwiperSlide>
             <div className="banner-1-img sec-1-banner-pr">
@@ -36,22 +29,14 @@ export default function Section1() {
                   <div className="col-12">
                     <div className="sec-1-banner-pa">
                       <p className="banner-s">Best Interior Design</p>
-                      <div
-                        className="wow animate__animated animate__fadeInUp"
-                        data-wow-duration="1s"
-                      >
+                      <div className="wow animate__animated animate__fadeInUp" data-wow-duration="1s">
                         <h1 className="banner-h1">
                           Building <span>Awesome</span>
                           <br /> Interiors Vision
                         </h1>
-                        <p className="banner-p">
-                          We believe that a well-designed space has the power
-                          to transform lives, evoke emotions, and enhance
-                          experiences. Our team of talented designers.
-                        </p>
+                        <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
                         <a href="/" className="btn-primary">
-                          Recent Project{" "}
-                          <i className="fa-solid fa-arrow-right-long"></i>
+                          Recent Project <i className="fa-solid fa-arrow-right-long"></i>
                         </a>
                       </div>
                     </div>
@@ -69,22 +54,14 @@ export default function Section1() {
                   <div className="col-12">
                     <div className="sec-1-banner-pa">
                       <p className="banner-s">Best Interior Design</p>
-                      <div
-                        className="wow animate__animated animate__fadeInUp"
-                        data-wow-duration="1s"
-                      >
+                      <div className="wow animate__animated animate__fadeInUp" data-wow-duration="1s">
                         <h1 className="banner-h1">
                           Creating <span>Inspiring</span>
                           <br /> Interiors Vision
                         </h1>
-                        <p className="banner-p">
-                          We believe that a well-designed space has the power
-                          to transform lives, evoke emotions, and enhance
-                          experiences. Our team of talented designers.
-                        </p>
+                        <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
                         <a href="/" className="btn-primary">
-                          Recent Project{" "}
-                          <i className="fa-solid fa-arrow-right-long"></i>
+                          Recent Project <i className="fa-solid fa-arrow-right-long"></i>
                         </a>
                       </div>
                     </div>
@@ -101,23 +78,15 @@ export default function Section1() {
                 <div className="row">
                   <div className="col-12">
                     <div className="sec-1-banner-pa">
-                      <div
-                        className="wow animate__animated animate__fadeInUp"
-                        data-wow-duration="1s"
-                      >
+                      <div className="wow animate__animated animate__fadeInUp" data-wow-duration="1s">
                         <p className="banner-s">Best Interior Design</p>
                         <h1 className="banner-h1">
                           Decorate <span>Beautiful</span>
                           <br /> Living Room
                         </h1>
-                        <p className="banner-p">
-                          We believe that a well-designed space has the power
-                          to transform lives, evoke emotions, and enhance
-                          experiences. Our team of talented designers.
-                        </p>
+                        <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
                         <a href="/" className="btn-primary">
-                          Recent Project{" "}
-                          <i className="fa-solid fa-arrow-right-long"></i>
+                          Recent Project <i className="fa-solid fa-arrow-right-long"></i>
                         </a>
                       </div>
                     </div>
@@ -134,16 +103,8 @@ export default function Section1() {
           <div className="row justify-content-end">
             {/* Static Thumbnails */}
             <div className="col-lg-9 col-md-10 index-thumb-padding">
-              <div className="gallery-thumbs">
-                <Swiper
-                  onSwiper={setThumbsSwiper}
-                  spaceBetween={10}
-                  slidesPerView={3}
-                  freeMode={true}
-                  watchSlidesProgress={true}
-                  modules={[Thumbs]}
-                  className="mySwiper"
-                >
+              <div className="gallery-thumbs d-lg-block d-md-block d-none">
+                <Swiper onSwiper={setThumbsSwiper} spaceBetween={10} slidesPerView={3} freeMode={true} watchSlidesProgress={true} modules={[Thumbs]} className="mySwiper">
                   <SwiperSlide>
                     <div className="p-0 index-slide-thumb-width">
                       <div className="sec-1-thumb-wrap sec-1-thumb-img-1">

@@ -1,0 +1,9 @@
+header .nav-main-b {
+    position: fixed !important;
+    width: 100%;
+    background: transparent !important;
+    z-index: 99999;
+}
+header .sticky-nav-scroll{
+    background-color: #141414 !important;
+}
