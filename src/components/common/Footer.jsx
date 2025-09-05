@@ -1,10 +1,19 @@
-// src/components/common/Footer.jsx
-import React from "react";
-
-// adjust the path as per your project
+import { useState, useEffect } from "react";
 import footerLogo from "../../assets/img/footer-logo.svg";
 
 export default function Footer() {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowScroll(window.scrollY > 200);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer>
       <div className="footer">
@@ -61,7 +70,7 @@ export default function Footer() {
                     <p>Call us for support</p>
                   </div>
                   <div>
-                    <a href="mailto:krishna@example.com" className="ftr-sec-a-sec-2">
+                    <a href="mailto:ethreal@example.com" className="ftr-sec-a-sec-2">
                       ethreal@example.com
                     </a>
                     <p>Email us for query</p>
@@ -131,6 +140,31 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Scroll To Top */}
+      {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="scroll-top-btn"
+          style={{
+            position: "fixed",
+            bottom: "30px",
+            right: "30px",
+            background: "#f0a80cff",
+            color: "#fff",
+            border: "none",
+            borderRadius: "50%",
+            width: "45px",
+            height: "45px",
+            fontSize: "20px",
+            cursor: "pointer",
+            zIndex: 1000,
+          }}
+          aria-label="Scroll to top"
+        >
+          ↑
+        </button>
+      )}
     </footer>
   );
 }

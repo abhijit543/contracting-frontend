@@ -4,6 +4,7 @@ import subtitlebg from "../../../assets/img/main-banners/sub-title-bg.png";
 import aboutbg1 from "../../../assets/img/about-us/about-bg-1.png";
 import aboutimg from "../../../assets/img/about-us/about-img.jpg";
 import about from "../../../assets/img/about-us/about.png";
+import { Link } from "react-router-dom";
 
 export default function Section3() {
   return (
@@ -45,10 +46,10 @@ export default function Section3() {
 
                   <div className="row mt-5 row-gap-5">
                     <div className="col-md-4 col-12">
-                      <a href="/about-us.html" className="btn-third">
+                      <Link to="/recent-project" className="btn-third">
                         Recent Project
                         <i className="fa-solid fa-arrow-right-long"></i>
-                      </a>
+                      </Link>
                     </div>
 
                     <div className="col-md-4 col-12">

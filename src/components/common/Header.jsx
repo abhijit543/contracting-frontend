@@ -83,10 +83,7 @@ export default function Header() {
                   Before After
                 </Link>
               </li>
-              {/*
-            
-             
-      
+
               <li className="nav-item">
                 <Link className="nav-link index-nav-a" to="/blog">
                   Blog
@@ -96,7 +93,7 @@ export default function Header() {
                 <Link className="nav-link index-nav-a" to="/contact-us">
                   Contact Us
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>

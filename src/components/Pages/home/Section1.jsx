@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "animate.css";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 export default function Section1() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -35,9 +36,9 @@ export default function Section1() {
                           <br /> Interiors Vision
                         </h1>
                         <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
-                        <a href="/" className="btn-primary">
+                        <Link to="/recent-project" className="btn-primary">
                           Recent Project <i className="fa-solid fa-arrow-right-long"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -60,9 +61,9 @@ export default function Section1() {
                           <br /> Interiors Vision
                         </h1>
                         <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
-                        <a href="/" className="btn-primary">
+                        <Link to="/recent-project" className="btn-primary">
                           Recent Project <i className="fa-solid fa-arrow-right-long"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -85,9 +86,9 @@ export default function Section1() {
                           <br /> Living Room
                         </h1>
                         <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
-                        <a href="/" className="btn-primary">
+                        <Link to="/recent-project" className="btn-primary">
                           Recent Project <i className="fa-solid fa-arrow-right-long"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
