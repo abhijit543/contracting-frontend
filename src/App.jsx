@@ -7,7 +7,7 @@ import Team from "./components/Pages/team/Team";
 import FaqPage from "./components/Pages/faq/Faq";
 import Services from "./components/Pages/services/Services";
 import PortFolio from "./components/Pages/portfolio/PortFolio";
-import PricingPlan from "./components/Pages/price/Price";
+// import PricingPlan from "./components/Pages/price/Price";
 import BeforeAfter from "./components/Pages/before-after/Beforeafter";
 import Blog from "./components/Pages/blogs/Blog";
 import BlogDetails from "./components/Pages/blogs/BlogDetails";
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<PortFolio />} />
-        <Route path="/pricing" element={<PricingPlan />} />
+        {/* <Route path="/pricing" element={<PricingPlan />} /> */}
         <Route path="/before-after" element={<BeforeAfter />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog-details/:id" element={<BlogDetails />} />

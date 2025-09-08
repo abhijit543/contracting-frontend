@@ -36,7 +36,7 @@ export default function Header() {
           <div className={`collapse navbar-collapse justify-content-end ${isOpen ? "show" : ""}`} id="navbarTogglerDemo01">
             <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/">
+                <Link className="nav-link index-nav-a" to="/" onClick={() => setIsOpen(false)}>
                   Home
                 </Link>
               </li>
@@ -45,7 +45,7 @@ export default function Header() {
                 <Link className="nav-link dropdown-toggle index-nav-a" to="/about-us" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   About Us
                 </Link>
-                <ul className="dropdown-menu index-nav-ul">
+                <ul className="dropdown-menu index-nav-ul" onClick={() => setIsOpen(false)}>
                   <li>
                     <Link className="dropdown-item index-nav-drop-a" to="/about-us">
                       About Us
@@ -64,33 +64,33 @@ export default function Header() {
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/services">
+                <Link className="nav-link index-nav-a" to="/services" onClick={() => setIsOpen(false)}>
                   Service
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/portfolio">
+                <Link className="nav-link index-nav-a" to="/portfolio" onClick={() => setIsOpen(false)}>
                   Portfolio
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/pricing">
+              {/* <li className="nav-item">
+                <Link className="nav-link index-nav-a" to="/pricing" onClick={() => setIsOpen(false)}>
                   Price Planning
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/before-after">
+                <Link className="nav-link index-nav-a" to="/before-after" onClick={() => setIsOpen(false)}>
                   Before After
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/blog">
+                <Link className="nav-link index-nav-a" to="/blog" onClick={() => setIsOpen(false)}>
                   Blog
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/contact-us">
+                <Link className="nav-link index-nav-a" to="/contact-us" onClick={() => setIsOpen(false)}>
                   Contact Us
                 </Link>
               </li>
