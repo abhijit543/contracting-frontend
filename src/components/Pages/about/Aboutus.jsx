@@ -1,4 +1,4 @@
-import AboutSection1 from "../about/AboutSection1";
+import AboutSection1 from "./AboutSection1";
 import AboutSection2 from "./AboutSection2";
 import AboutSection3 from "./AboutSection3";
 import AboutSection4 from "./AboutSection4";
