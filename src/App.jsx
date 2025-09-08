@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/common/Header";
-import Home from "./components/pages/home/Home";
+import Home from "./components/pages/home/Home.jsx";
 import Footer from "./components/common/Footer";
 import Aboutus from "./components/Pages/about/Aboutus";
 import Team from "./components/Pages/team/Team";
@@ -31,6 +31,7 @@ export default function App() {
         <Route path="/blog-details/:id" element={<BlogDetails />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/recent-project" element={<RecentProject />} />
+
         <Route path="/space-planning" element={<SpacePlanning />} />
       </Routes>
       <Footer />
