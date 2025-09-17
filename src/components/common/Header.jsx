@@ -1,7 +1,7 @@
 // Header.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo.svg";
+import logo from "../../assets/img/logo.png";
 import "./Common.css";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ export default function Header() {
       <nav className={`navbar navbar-expand-lg py-4 bg-dark navbar-dark  nav-main-b header-nav-mob ${isSticky ? "sticky-nav-scroll" : ""}`}>
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo" className="header-logo" />
           </Link>
 
           <button className="navbar-toggler" type="button" onClick={toggleNavbar} aria-controls="navbarTogglerDemo01" aria-expanded={isOpen} aria-label="Toggle navigation">

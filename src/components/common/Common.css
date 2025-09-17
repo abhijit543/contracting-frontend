@@ -3,7 +3,27 @@ header .nav-main-b {
     width: 100%;
     background: transparent !important;
     z-index: 99999;
+    padding-top: 1.5rem !important;
+    padding-bottom: 0.5rem !important;
 }
-header .sticky-nav-scroll{
+
+header .sticky-nav-scroll {
     background-color: #141414 !important;
+}
+
+@media (max-width:767px) {
+    .header-logo {
+        width: 90%;
+    }
+
+    button.navbar-toggler {
+        position: fixed;
+        left: 305px;
+        top: 27px;
+
+    }
+
+    .footer {
+        padding: 2px 0;
+    }
 }

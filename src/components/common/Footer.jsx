@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import footerLogo from "../../assets/img/footer-logo.svg";
-
+import footerLogo from "../../assets/img/logo.png";
+import "./Common.css";
 export default function Footer() {
   const [showScroll, setShowScroll] = useState(false);
 
@@ -150,7 +150,7 @@ export default function Footer() {
             position: "fixed",
             bottom: "30px",
             right: "30px",
-            background: "#f0a80cff",
+            background: "#219c97",
             color: "#fff",
             border: "none",
             borderRadius: "50%",
