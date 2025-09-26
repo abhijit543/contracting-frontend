@@ -1,132 +1,106 @@
 // Section2.jsx
 import "animate.css";
 import subtitleBg from "../../../assets/img/main-banners/sub-title-bg.png";
-import service1 from "../../../assets/img/service/service-01.jpg";
-import service1svg from "../../../assets/img/service/service-i-1.svg";
-import service2 from "../../../assets/img/service/service-02.jpg";
-import service2svg from "../../../assets/img/service/service-i-2.svg";
-import service3 from "../../../assets/img/service/service-03.jpg";
-import service3svg from "../../../assets/img/service/service-i-2.svg";
-import { Link } from "react-router-dom";
+import "./Home.css";
+import evolution1 from "../../../assets/img/home-evolution/2019.jpg";
+import evolution2 from "../../../assets/img/home-evolution/2020.jpg";
+import { motion } from "framer-motion";
+
+const timelineData = [
+  { year: "2019", text: "Start", img: evolution1 },
+  { year: "2020", text: "Turn Over - 64.8 Lacs", img: evolution2 },
+  { year: "2021", text: "Turn Over - 2.76 Cr.", img: evolution1 },
+  { year: "2022", text: "Turn Over - 2.29 Cr.", img: evolution2 },
+  { year: "2023", text: "Turn Over - 3 Cr.", img: evolution1 },
+];
+
 export default function Section2() {
   return (
     <section id="Section2">
       <div className="section-2">
         <div className="container">
           {/* Sub Title */}
-          <div className="sub-title-wrapper">
-            <h6 className="sub-title">Services</h6>
-            <img src={subtitleBg} loading="lazy" alt="subtitle background" className="sub-title-img" />
+          <div className="sub-title-wrapper mb-5 ">
+            <h6 className="sub-title">Evolution</h6>
+            <img
+              src={subtitleBg}
+              loading="lazy"
+              alt="subtitle background"
+              className="sub-title-img"
+            />
           </div>
 
-          {/* Title Row */}
-          <div className="row sec-2-h-wrapper">
-            <div className="col-lg-5 col-md-12">
-              <h1 className="title">Comprehensive Interior Design Services</h1>
-            </div>
-            <div className="col-lg-5 col-md-12">
-              <p className="title-p">Welcome to our interior design services, where we specialize in transforming spaces into stunning, functional of services.</p>
-            </div>
-            <div className="col-lg-2 col-md-12">
-              <a href="/services.html" className="title-btn-secondary">
-                View All Service <i className="fa-solid fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
+          {/* Timeline */}
+          <div className="timeline-wrapper position-relative">
+            {/* Snake Line SVG with animation */}
+            <motion.svg
+              className="timeline-line d-none d-md-block"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1000 200"
+              preserveAspectRatio="none"
+            >
+              <motion.path
+                d="M 0 100 Q 150 0, 300 100 T 600 100 T 900 100"
+                stroke="#6c757d"
+                strokeWidth="4"
+                fill="transparent"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+              />
+            </motion.svg>
 
-          {/* Service img Sec */}
-          <div className="sec-2-service-img-wrapper wow animate__animated animate__fadeInUp" data-wow-duration="2s">
-            <div className="row row-gap-5">
-              {/* Service 1 */}
-              <div className="col-lg-4 col-md-6 service-img-wrap">
-                <div className="effect5 index-sec-2-img">
-                  <a href="/space-palnning.html">
-                    <img src={service1} loading="lazy" alt="Space Planning" width="100%" />
-                  </a>
-                </div>
-                <div className="service-img-cont-wrapper">
-                  <div>
-                    <div className="service-wrapper-h1">
-                      <span>
-                        <img src={service1svg} loading="lazy" alt="icon" />
-                      </span>
-                      <span className="sec-1-thumb-wrap-num"> 01</span>
-                    </div>
-                    <div>
-                      <h5>
-                        <Link to="/space-planning" className="service-h">
-                          Space Planning
-                        </Link>
-                      </h5>
-                      <p className="service-img-p">Space planning is a fundamental aspect off interior design that focuses on arranging.</p>
-                      <Link to="/space-planning" className="service-img-btn">
-                        Read More <i className="fa-solid fa-chevron-right"></i>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="d-flex justify-content-between flex-wrap">
+              {timelineData.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={`timeline-item text-center position-relative mb-5 mb-md-0 ${
+                    index % 2 === 0 ? "align-top" : "align-bottom"
+                  }`}
+                  initial={{ opacity: 0, y: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  {/* Year Circle */}
+                  <motion.div
+                    className="year-circle rounded-circle text-white fw-bold 
+                    d-flex align-items-center justify-content-center mx-auto"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, delay: index * 0.2 }}
+                  >
+                    {item.year}
+                  </motion.div>
 
-              {/* Service 2 */}
-              <div className="col-lg-4 col-md-6 service-img-wrap">
-                <div className="effect5 index-sec-2-img">
-                  <a href="/interior.html">
-                    <img src={service2} loading="lazy" alt="Interior Design" width="100%" />
-                  </a>
-                </div>
-                <div className="service-img-cont-wrapper">
-                  <div>
-                    <div className="service-wrapper-h1">
-                      <span>
-                        <img src={service2svg} loading="lazy" alt="icon" />
-                      </span>
-                      <span className="sec-1-thumb-wrap-num"> 02</span>
-                    </div>
-                    <div>
-                      <h5>
-                        <a href="/interior.html" className="service-h">
-                          Interior Design
-                        </a>
-                      </h5>
-                      <p className="service-img-p">Space planning is a fundamental aspect off interior design that focuses on arranging.</p>
-                      <a href="/interior.html" className="service-img-btn">
-                        Read More <i className="fa-solid fa-chevron-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Image */}
+          <motion.div
+  className="timeline-img rounded-circle overflow-hidden border border-2 border-dark mx-auto"
+  style={index === 2 ? { marginTop: "30px" } : {}}
+  initial={{ opacity: 0, scale: 0.8 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5, delay: index * 0.3 }}
+>
 
-              {/* Service 3 */}
-              <div className="col-lg-4 col-md-6 service-img-wrap">
-                <div className="effect5 index-sec-2-img">
-                  <a href="/remodiling.html">
-                    <img src={service3} loading="lazy" alt="Remodiling Services" width="100%" />
-                  </a>
-                </div>
-                <div className="service-img-cont-wrapper">
-                  <div>
-                    <div className="service-wrapper-h1">
-                      <span>
-                        <img src={service3svg} loading="lazy" alt="icon" />
-                      </span>
-                      <span className="sec-1-thumb-wrap-num"> 03</span>
-                    </div>
-                    <div>
-                      <h5>
-                        <a href="/remodiling.html" className="service-h">
-                          Remodiling Services
-                        </a>
-                      </h5>
-                      <p className="service-img-p">Space planning is a fundamental aspect off interior design that focuses on arranging.</p>
-                      <a href="/remodiling.html" className="service-img-btn">
-                        Read More <i className="fa-solid fa-chevron-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* End Service 3 */}
+                    <img
+                      src={item.img}
+                      alt={item.year}
+                      className="img-fluid w-100 h-100"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </motion.div>
+
+                  {/* Text */}
+                  <motion.p
+                    className="mt-2 small"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: index * 0.4 }}
+                  >
+                    {item.text}
+                  </motion.p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
