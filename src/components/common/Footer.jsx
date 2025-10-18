@@ -1,8 +1,24 @@
 import { useState, useEffect } from "react";
 import footerLogo from "../../assets/img/logo.png";
 import "./Common.css";
+import logo1 from "../../assets/img/company-logos/logo1.png";
+import logo2 from "../../assets/img/company-logos/logo2.png";
+import logo3 from "../../assets/img/company-logos/logo3.png";
+import logo4 from "../../assets/img/company-logos/logo4.png";
+import logo5 from "../../assets/img/company-logos/logo5.png";
+import logo6 from "../../assets/img/company-logos/logo6.png";
+import logo7 from "../../assets/img/company-logos/logo7.png";
+import logo8 from "../../assets/img/company-logos/logo8.png";
+import logo9 from "../../assets/img/company-logos/logo9.png";
+import logo10 from "../../assets/img/company-logos/logo10.png";
+import logo11 from "../../assets/img/company-logos/logo11.png";
+import logo12 from "../../assets/img/company-logos/logo12.png";
+import logo13 from "../../assets/img/company-logos/logo13.png";
+import logo14 from "../../assets/img/company-logos/logo14.png";
+import logo15 from "../../assets/img/company-logos/logo15.png";
 export default function Footer() {
   const [showScroll, setShowScroll] = useState(false);
+    const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15];
 
   useEffect(() => {
     const onScroll = () => setShowScroll(window.scrollY > 200);
@@ -16,6 +32,15 @@ export default function Footer() {
 
   return (
     <footer>
+       <section className="company-logo-section">
+      <div className="logo-track">
+        {logos.concat(logos).map((logo, index) => (
+          <div className="logo-item" key={index}>
+            <img src={logo} alt={`Company Logo ${index}`} />
+          </div>
+        ))}
+      </div>
+    </section>
       <div className="footer">
         <div className="container">
           <div className="footer-wrapper">
