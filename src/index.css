@@ -111,7 +111,7 @@ li a:hover {
 .sec-9-btn {
     text-decoration: none;
     color: var(--color-body);
-    border: 1px solid #88919B;
+    border: 1px solid #219c97;
     padding: 12px 29px;
     border-radius: 6px;
     font-size: var(--font-size-b2);
@@ -121,7 +121,7 @@ li a:hover {
 }
 
 .sec-9-btn:hover {
-    background-color: var(--color-primary);
+    background-color: #219c97;
     border: 1px solid transparent;
     color: var(--color-white);
 }
@@ -178,7 +178,7 @@ li a:hover {
 
 /*Sub Title Start*/
 .sub-title {
-    color: var(--color-primary);
+    color: #ff001f;
 }
 
 .sub-title-wrapper {
@@ -290,7 +290,7 @@ li a:hover {
 
 .sec-1-thumb-wrap {
     padding: 20px;
-    background-color: var(--color-white);
+    background-color: #219c97;;
 }
 
 .sec-1-thumb-wrap-num {
@@ -303,13 +303,13 @@ li a:hover {
 }
 
 .sec-1-thumb-wrap-p {
-    color: var(--color-primary);
+    color: #b1de0c;
     font-size: var(--font-size-b2);
     font-weight: var(--s-medium);
 }
 
 .sec-1-thumb-wrap-h5 {
-    color: var(--color-secondary);
+    color: #b1de0c;
 
 }
 

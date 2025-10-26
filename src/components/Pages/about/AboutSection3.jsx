@@ -1,82 +1,106 @@
-// AboutSection3.jsx
-import { Link } from "react-router-dom";
-import sec8Heading from "../../../assets/img/sec-8-heading.png";
-import team1 from "../../../assets/img/about-us-p/about-team-1.jpg";
-import team2 from "../../../assets/img/about-us-p/about-team-2.jpg";
-import team3 from "../../../assets/img/about-us-p/about-team-3.jpg";
-import team4 from "../../../assets/img/about-us-p/about-team-4.jpg";
+import "animate.css";
+import subtitleBg from "../../../assets/img/main-banners/sub-title-bg.png";
+
+import evolution1 from "../../../assets/img/home-evolution/2019.jpg";
+import evolution2 from "../../../assets/img/home-evolution/2020.jpg";
+import "./AboutSection2.css"
+import { motion } from "framer-motion";
+
+const timelineData = [
+  { year: "2019", text: "Start", img: evolution1 },
+  { year: "2020", text: "Turn Over - 64.8 Lacs", img: evolution2 },
+  { year: "2021", text: "Turn Over - 2.76 Cr.", img: evolution1 },
+  { year: "2022", text: "Turn Over - 2.29 Cr.", img: evolution2 },
+  { year: "2023", text: "Turn Over - 3 Cr.", img: evolution1 },
+];
 
 export default function AboutSection3() {
   return (
-    <section id="aboutSection-3">
-      <div className="about-section-3">
-        <div className="container">
-          {/* Heading */}
-          <div>
-            <div className="sec-8-heading">
-              <img src={sec8Heading} alt="Section 8 Heading" />
-              <span>Our Team</span>
-            </div>
-          </div>
+    <section id="Section2" className="timeline-section">
+      {/* Decorative blobs */}
+      <div className="blob blob1"></div>
+      <div className="blob blob2"></div>
 
-          {/* Title & Description */}
-          <div>
-            <h1 className="sec-8-h1">Meet Our Talented Team</h1>
-            <p className="abtsec-3-p">
-              we are proud to have a dedicated and skilled team of professionals <br />
-              who are passionate about interior renovation and design.
-            </p>
-          </div>
+      <div className="container">
+        {/* Sub Title */}
+        <div className="sub-title-wrapper mb-5">
+          <h6 className="sub-title">Evolution</h6>
+          <img
+            src={subtitleBg}
+            loading="lazy"
+            alt="subtitle background"
+            className="sub-title-img"
+          />
+        </div>
 
-          {/* Team Grid */}
-          <div className="row mt-5 row-gap-5">
-            {[
-              { img: team1, role: "Architecture", name: "David Leo" },
-              { img: team2, role: "Architecture", name: "Joshep Liam" },
-              { img: team3, role: "Designer", name: "Emiley" },
-              { img: team4, role: "Architecture", name: "Alexander" },
-            ].map((member, i) => (
-              <div className="col-lg-3 col-md-4" key={i}>
-                <div className="abtsec-3-img-wrapper abt-sec3-img-pos">
-                  <Link to="/team-detail">
-                    <img src={member.img} width="100%" alt={member.name} />
-                  </Link>
+        {/* Timeline */}
+        <div className="timeline-wrapper position-relative">
+          {/* Snake Line SVG with animation */}
+          <motion.svg
+            className="timeline-line d-none d-md-block"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1000 200"
+            preserveAspectRatio="none"
+          >
+            <motion.path
+              d="M 0 100 Q 150 0, 300 100 T 600 100 T 900 100"
+              stroke="linear-gradient(90deg, #6c757d, #3a8d8c)"
+              strokeWidth="4"
+              fill="transparent"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            />
+          </motion.svg>
 
-                  {/* Social Icons */}
-                  <div className="abt-team-icon-wrapper">
-                    <ul>
-                      <li className="abt-team-icon-li">
-                        <a href="#" className="abt-team-icon-a">
-                          <i className="fa-brands fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li className="abt-team-icon-li">
-                        <a href="#" className="abt-team-icon-a">
-                          <i className="fa-brands fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li className="abt-team-icon-li">
-                        <a href="#" className="abt-team-icon-a">
-                          <i className="fa-brands fa-youtube"></i>
-                        </a>
-                      </li>
-                      <li className="abt-team-icon-li">
-                        <a href="#" className="abt-team-icon-a">
-                          <i className="fa-brands fa-linkedin"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+          <div className="d-flex justify-content-between flex-wrap">
+            {timelineData.map((item, index) => (
+              <motion.div
+                key={index}
+                className={`timeline-item text-center position-relative mb-5 mb-md-0 ${
+                  index % 2 === 0 ? "align-top" : "align-bottom"
+                }`}
+                initial={{ opacity: 0, y: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                {/* Year Circle */}
+                <motion.div
+                  className="year-circle d-flex align-items-center justify-content-center mx-auto"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 200, delay: index * 0.2 }}
+                >
+                  {item.year}
+                </motion.div>
 
-                {/* Role & Name */}
-                <div>
-                  <span className="abtsec-3-h5">{member.role}</span>
-                  <Link className="abtsec-3-a" to="/team-detail">
-                    <h6>{member.name}</h6>
-                  </Link>
-                </div>
-              </div>
+                {/* Image */}
+                <motion.div
+                  className="timeline-img rounded-circle overflow-hidden mx-auto"
+                  style={index === 2 ? { marginTop: "30px" } : {}}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.3 }}
+                >
+                  <img
+                    src={item.img}
+                    alt={item.year}
+                    className="img-fluid w-100 h-100"
+                    style={{ objectFit: "cover" }}
+                  />
+                </motion.div>
+
+                {/* Text */}
+                <motion.p
+                  className="mt-2 small"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: index * 0.4 }}
+                >
+                  {item.text}
+                </motion.p>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -4,7 +4,12 @@
      /* height: 127vh; */
      height: 100%;
 }
-
+.banner-s, .banner-h1{
+  color: #219c97;
+}
+.banner-p{
+  color:#b1de0c
+}
 .banner-2-img {
     background: url(../../../assets/img/main-banners/banner-02.jpg) no-repeat;
     background-size: cover;
