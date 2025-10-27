@@ -1,0 +1,142 @@
+/* ===== Hero Section ===== */
+.contact-hero {
+  background: 
+    url("../../../assets/img/about-us-p/about-us-banner.jpg") center/cover no-repeat;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.breadcrumb-link {
+  color: #e0f7f5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-active {
+  color: #fff;
+  margin-left: 4px;
+}
+
+.contact-hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.contact-hero-subtext {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 15px auto 0;
+  color: #e3f4f3;
+}
+
+/* ===== Main Section ===== */
+.contact-main-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.contact-card,
+.contact-details-card,
+.contact-form-card {
+  background: rgb(180, 202, 202);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover,
+.contact-details-card:hover,
+.contact-form-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-company-title {
+  color: #219c97;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.contact-description {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.contact-hotline {
+  display: inline-block;
+  font-weight: 600;
+  color: #219c97;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.contact-details-card h4 {
+  color: #219c97;
+  margin-bottom: 15px;
+}
+
+.contact-detail-item {
+  margin-bottom: 18px;
+}
+
+.contact-detail-item h6  {
+  margin-bottom: 5px;
+  color: #fff;
+  font-weight: 600;
+}
+.contact-detail-item p{
+      color: #219c97;
+}
+.contact-link {
+  color: #219c97;
+  text-decoration: none;
+}
+
+.contact-form-card h4 {
+  color: #219c97;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #219c97;
+}
+
+.contact-form button {
+  background: #219c97;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background: #1b837f;
+}
+
+/* ===== Map Section ===== */
+.contact-map-section {
+  padding: 60px 0;
+      background: rgb(180, 202, 202);
+      margin-bottom: 3px;
+}

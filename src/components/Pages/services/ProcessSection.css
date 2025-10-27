@@ -1,0 +1,157 @@
+/* ProcessSection.css */
+
+.process-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 100px 20px 80px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Background overlay */
+.process-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(0.3);
+  z-index: 0;
+}
+
+/* Heading */
+.process-heading {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 60px;
+}
+
+.process-heading h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heading-underline {
+  width: 80px;
+  height: 4px;
+  background: #00a6a6;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Steps container */
+.process-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each step */
+.process-step {
+  flex: 1 1 250px;
+  max-width: 260px;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-6px);
+}
+
+/* Icon circle */
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle img {
+  width: 45px;
+  height: 45px;
+}
+
+/* Text */
+.step-text h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.step-text p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e6e6e6;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* Tablet view */
+@media (max-width: 992px) {
+  .process-content {
+    gap: 30px;
+  }
+
+  .process-step {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .process-section {
+    padding: 60px 15px;
+  }
+
+  .process-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .process-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .process-step {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .icon-circle img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .step-text p {
+    font-size: 0.9rem;
+  }
+}

@@ -141,7 +141,7 @@ export default function Section6() {
             {/* Know More Button */}
             <div className="text-center mt-5">
               <a
-                href="/projects"
+                href="/project-lifecycle"
                 className="sec-9-btn"
                 style={{
                   background: "#fff",

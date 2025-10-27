@@ -52,8 +52,8 @@ export default function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item index-nav-drop-a" to="/team">
-                      Teams
+                    <Link className="dropdown-item index-nav-drop-a" to="/clients">
+                    Our  Clients
                     </Link>
                   </li>
                   <li>
@@ -73,20 +73,16 @@ export default function Header() {
                   Portfolio
                 </Link>
               </li>
-              {/* <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/pricing" onClick={() => setIsOpen(false)}>
-                  Price Planning
-                </Link>
-              </li> */}
+        
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/before-after" onClick={() => setIsOpen(false)}>
-                  Before After
+                <Link className="nav-link index-nav-a" to="/projects" onClick={() => setIsOpen(false)}>
+                  Projects
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link index-nav-a" to="/blog" onClick={() => setIsOpen(false)}>
-                  Blog
+                <Link className="nav-link index-nav-a" to="/project-lifecycle" onClick={() => setIsOpen(false)}>
+                  Project LifeCycle
                 </Link>
               </li>
               <li className="nav-item">

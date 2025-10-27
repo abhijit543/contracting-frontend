@@ -34,31 +34,39 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer >
+    <footer>
       {/* Company Logos Section */}
-      <section className="company-logo-section" style={{background:"#219c97"}}>
+      <section className="company-logo-section" style={{ background: "#219c97" }}>
         <div className="logo-track">
           {logos.concat(logos).map((logo, index) => (
             <div className="logo-item" key={index}>
-              <img src={logo} alt={`Company Logo ${index}`} />
+              <a href="/clients" aria-label={`View our clients - Logo ${index}`}>
+                <img
+                  src={logo}
+                  alt={`Company Logo ${index}`}
+                  style={{ cursor: "pointer", transition: "transform 0.3s" }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                />
+              </a>
             </div>
           ))}
         </div>
       </section>
 
       {/* Footer Main Content */}
-      <div className="footer" style={{background:"rgb(180, 202, 202)"}}>
+      <div className="footer" style={{ background: "rgb(180, 202, 202)" }}>
         <div className="container">
           <div className="footer-wrapper">
             <div className="row row-gap-4">
               
               {/* Logo & Social */}
-              <div className="col-md-3 col-12">
+              <div className="col-md-4 col-12">
                 <div>
                   <a href="/">
                     <img src={footerLogo} alt="Company logo" />
                   </a>
-                  <div className="footer-icon-wrapper">
+                  <div className="footer-icon-wrapper mt-3">
                     <ul className="footer-icon-wrapper-ul p-0">
                       <li><a href="#"><i className="fa-brands fa-facebook-f footer-icon"></i></a></li>
                       <li><a href="#"><i className="fa-brands fa-youtube footer-icon"></i></a></li>
@@ -70,7 +78,7 @@ export default function Footer() {
               </div>
 
               {/* Address & Contact */}
-              <div className="col-md-3 col-12">
+              <div className="col-md-4 col-12">
                 <div>
                   <div className="ftr-loc-sec">
                     <p>
@@ -79,7 +87,7 @@ export default function Footer() {
                       B-Narayan Pura, Bengaluru - 560016.
                     </p>
                   </div>
-                  <div>
+                  <div className="mt-3">
                     <a href="tel:08048141656" className="ftr-sec-a-sec-2">
                       080 48141656
                     </a>
@@ -94,30 +102,20 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Useful Links */}
-              <div className="col-md-3 col-12">
-                <div className="footer-sec-3-wrapper">
-                  <h5 className="footer-sec-3-h">Useful Links</h5>
-                  <ul className="footer-sec-3-ul p-0">
-                    <li><a href="/about-us.html">Why Choose Us</a></li>
-                    <li><a href="/blog.html">Read Blog</a></li>
-                    <li><a href="/about-us.html">Work Process</a></li>
-                    <li><a href="/faq.html">FAQ’s</a></li>
-                    <li><a href="/services.html">Support</a></li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Google Map */}
-              <div className="col-md-3 col-12">
+              {/* Google Map (Enlarged) */}
+              <div className="col-md-4 col-12">
                 <div>
                   <h5>Our Location</h5>
                   <iframe
                     title="Ethereal Turnkey Projects Location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6919386618056!2d77.67924437543152!3d12.991544887325691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae112dfd4ade47%3A0x8d058d6bdabc26b7!2sEleora%20Electricals%20%26%20Engineers%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1761471908906!5m2!1sen!2sin"
                     width="100%"
-                    height="200"
-                    style={{ border: 0, borderRadius: "10px" }}
+                    height="280"
+                    style={{
+                      border: 0,
+                      borderRadius: "12px",
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                    }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -131,7 +129,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Row */}
-      <div className="footer-row-2" style={{background:"#219c97"}}>
+      <div className="footer-row-2" style={{ background: "#219c97" }}>
         <div className="container">
           <div className="ftr-row-2-wrapper">
             <p className="m-0 text-white">Developed By &copy; Ethreal</p>

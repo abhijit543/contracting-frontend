@@ -236,12 +236,13 @@
   position: relative;
   overflow: hidden;
   margin-top: 3px;
+  color: #fff;
 }
 
 .health-heading {
   font-size: 2rem;
   font-weight: 700;
-  color: #0d1b2a;
+
   margin-bottom: 25px;
 }
 
@@ -249,7 +250,7 @@
   list-style: disc inside;
   font-size: 1rem;
   line-height: 1.8;
-  color: #0d1b2a;
+
   padding-left: 0;
 }
 

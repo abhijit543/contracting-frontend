@@ -1,0 +1,94 @@
+.clients-section {
+  background-color: rgb(180, 202, 202);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+
+.clients-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1b2d33;
+  margin-bottom: 15px;
+}
+
+.clients-subtext {
+  color: #2f3e44;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
+}
+
+.client-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 25px 20px;
+  max-width: 200px;
+}
+
+.client-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.client-logo {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.client-card:hover .client-logo {
+  transform: scale(1.08);
+}
+
+.client-name {
+  font-size: 0.95rem;
+  color: #1b2d33;
+  font-weight: 600;
+}
+
+/* Top Section (breadcrumb + title) */
+.about-section-1 {
+
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.breadcrumb-wrap {
+  margin-bottom: 10px;
+}
+
+.abt-sec-1-a-1,
+.abt-sec-1-a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.abt-sec-1-a-1:hover,
+.abt-sec-1-a:hover {
+  color: #b4caca;
+}
+
+.abt-sec-1-h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
