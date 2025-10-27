@@ -36,7 +36,7 @@ export default function Section1() {
                           <br /> Interiors Vision
                         </h1>
                         <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
-                        <Link to="/recent-project" className="btn-primary">
+                        <Link to="/projects" className="btn-primary">
                           Recent Project <i className="fa-solid fa-arrow-right-long"></i>
                         </Link>
                       </div>
@@ -61,7 +61,7 @@ export default function Section1() {
                           <br /> Interiors Vision
                         </h1>
                         <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
-                        <Link to="/recent-project" className="btn-primary">
+                        <Link to="/projects" className="btn-primary">
                           Recent Project <i className="fa-solid fa-arrow-right-long"></i>
                         </Link>
                       </div>
@@ -86,7 +86,7 @@ export default function Section1() {
                           <br /> Living Room
                         </h1>
                         <p className="banner-p">We believe that a well-designed space has the power to transform lives, evoke emotions, and enhance experiences. Our team of talented designers.</p>
-                        <Link to="/recent-project" className="btn-primary">
+                        <Link to="/projects" className="btn-primary">
                           Recent Project <i className="fa-solid fa-arrow-right-long"></i>
                         </Link>
                       </div>
