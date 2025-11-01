@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import bgImg from "../../../assets/img/project-bg-img.jpg"
+import './Projects.css'
 export default function Projects() {
   const projectsData = [
   {
@@ -297,22 +298,22 @@ export default function Projects() {
               </h3>
 
               <p className="text-sm mb-1 text-white-100">
-                <span className="font-semibold text-white">Packages:</span>{" "}
+                <span className="font-semibold text-white">Packages:</span>
                 {proj.packages}
               </p>
               <p className="text-sm mb-1 text-white-100">
                 <span className="font-semibold text-white">Location:</span>{" "}
                 {proj.location}
               </p>
-              <p className="text-sm mb-1 text-white-100">
+              <p className="text-sm mb-1 text-white-100 ">
                 <span className="font-semibold text-white">Client:</span>{" "}
-                {proj.client}
+              {proj.client}
               </p>
-              <p className="text-sm mb-1 text-gray-100">
+              <p className="text-sm mb-1 text-white-100">
                 <span className="font-semibold text-white">Type:</span>{" "}
                 {proj.typeOfProject}
               </p>
-              <p className="text-sm text-gray-100">
+              <p className="text-sm text-white-100">
                 <span className="font-semibold text-white">Sq Ft:</span>{" "}
                 {proj.sqft}
               </p>
