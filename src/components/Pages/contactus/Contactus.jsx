@@ -1,10 +1,57 @@
 import { Link } from "react-router-dom";
 import "./ContactUs.css";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    if (!formData.name || !formData.phone || !formData.message) {
+      setStatus("⚠️ Please fill in all fields.");
+      return;
+    }
+
+    if (!/^[0-9]{10}$/.test(formData.phone)) {
+      setStatus("📞 Enter a valid 10-digit phone number.");
+      return;
+    }
+
+    setStatus("⏳ Sending...");
+
+    emailjs
+      .send(
+        "service_862nhrr", // ✅ Your EmailJS Service ID
+        "template_qzm4la3", // ✅ Your EmailJS Template ID
+        {
+          from_name: formData.name,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "lszWWLLrkCYWnaXsL" // ✅ Your EmailJS Public Key
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setTimeout(() => setSubmitted(true), 1000);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          setStatus("❌ Failed to send message. Please try again later.");
+        }
+      );
   };
 
   return (
@@ -69,16 +116,53 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Contact Form / Thank You */}
             <div className="col-lg-5">
               <div className="contact-form-card">
-                <h4>Send Us a Message</h4>
-                <form onSubmit={handleSubmit} className="contact-form">
-                  <input type="text" placeholder="Your Name" required />
-                  <input type="tel" placeholder="Phone Number" required />
-                  <textarea placeholder="Write your message..." rows={4} required></textarea>
-                  <button type="submit">Send Message</button>
-                </form>
+                {!submitted ? (
+                  <>
+                    <h4>Send Us a Message</h4>
+                    <form onSubmit={handleSubmit} className="contact-form">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone Number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                      />
+                      <textarea
+                        name="message"
+                        placeholder="Write your message..."
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                      ></textarea>
+                      <button type="submit">Send Message</button>
+                    </form>
+                    {status && <p className="status-message">{status}</p>}
+                  </>
+                ) : (
+                  <div className="thank-you-wrapper">
+                    <div className="thank-you-card">
+                      <div className="checkmark-circle">
+                        <div className="checkmark"></div>
+                      </div>
+                      <h2>Thank You!</h2>
+                      <p>Your message has been sent successfully. We’ll get back to you shortly.</p>
+                      <Link to="/" className="back-home-btn">Go Back Home</Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 

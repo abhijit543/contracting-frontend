@@ -8,7 +8,7 @@ export default function FaqPage() {
     <main>
       {/* ---------- Section 1: Hero ---------- */}
       <section>
-        <div className="about-sec-1-wrapper contact-sec-1-wrapper">
+        <div className="faq-sec-1-wrapper contact-sec-1-wrapper">
           <div className="container">
             <div className="about-sec-1-content-wrap">
               <div>

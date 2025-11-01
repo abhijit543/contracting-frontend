@@ -50,7 +50,7 @@ export default function PortFolio() {
     <main>
       {/* Section 1: Banner (same) */}
       <section>
-        <div className="about-section-1 about-sec-1-wrapper">
+        <div className="about-section-1 portfolio-sec-1-wrapper">
           <div className="container">
             <div className="about-sec-1-content-wrap">
               <div>

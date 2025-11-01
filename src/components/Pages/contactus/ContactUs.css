@@ -1,7 +1,10 @@
 /* ===== Hero Section ===== */
 .contact-hero {
   background: 
-    url("../../../assets/img/about-us-p/about-us-banner.jpg") center/cover no-repeat;
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  /* black overlay */
+    url(../src/assets/img/contact-bg-img.jpg)
+      no-repeat top center;
+  background-size: cover;
   color: white;
   padding: 100px 0;
   text-align: center;
@@ -140,3 +143,93 @@
       background: rgb(180, 202, 202);
       margin-bottom: 3px;
 }
+
+/* --- Thank You Message Styling --- */
+.thank-you-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.thank-you-card {
+  text-align: center;
+  background: #f9fff9;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  animation: popIn 0.6s ease;
+}
+
+.thank-you-card h2 {
+  color: #219c97;
+  font-size: 28px;
+  margin-top: 15px;
+}
+
+.thank-you-card p {
+  color: #444;
+  margin: 10px 0 20px;
+  font-size: 16px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  background: #219c97;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background: #197a74;
+}
+
+/* --- Checkmark Animation --- */
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #e6f7f5;
+  position: relative;
+}
+
+.checkmark {
+  position: absolute;
+  left: 24px;
+  top: 38px;
+  width: 20px;
+  height: 40px;
+  border-right: 5px solid #219c97;
+  border-bottom: 5px solid #219c97;
+  transform: rotate(45deg);
+  animation: drawCheck 0.6s ease forwards;
+}
+
+@keyframes drawCheck {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+

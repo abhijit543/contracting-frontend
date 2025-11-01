@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import "./LifeCycle.css";
 
 export default function LifeCycle() {
+
   return (
     <main>
       {/* ---------- Section 1 ---------- */}
       <section>
-        <div className="about-sec-1-wrapper">
+        <div className="project-life-cycle-sec-wrapper">
           <div className="container">
             <div className="about-sec-1-content-wrap">
               <div>
                 <Link to="/" className="abt-sec-1-a-1">
                   Home
-                </Link>{" "}
+                </Link>
                 /<span className="abt-sec-1-a"> Project LifeCycle</span>
               </div>
               <div>

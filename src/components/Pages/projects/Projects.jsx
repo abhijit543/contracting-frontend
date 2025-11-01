@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import bgImg from "../../../assets/img/project-bg-img.jpg"
 export default function Projects() {
   const projectsData = [
   {
@@ -205,12 +205,8 @@ export default function Projects() {
         "sqft": "LAB"
       }
     ]
-  }
-
-]
-
-const ongoingProjectData=[
-  {
+  },
+ {
     "year":"2023-2024",
     "projects":[
       {
@@ -229,15 +225,21 @@ const ongoingProjectData=[
         "typeOfProject": "GC works",
         "sqft": "Wing A & B"
       }
+    
     ]
   }
 ]
+
+
 
   return (
     <main>
       {/* ---------- Section 1 ---------- */}
       <section id="priceSection-1">
-        <div className="about-sec-1-wrapper">
+        <div className="project-sec-1-wrapper"style={{ background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                 url(${bgImg}) no-repeat top center`,
+    backgroundSize: "cover"
+  }}>
           <div className="container">
             <div className="about-sec-1-content-wrap">
               <div>
@@ -258,193 +260,71 @@ const ongoingProjectData=[
 
       {/* ---------- Section 2 (Enhanced Table) ---------- */}
  <section
-      style={{ backgroundColor: "#219c97" }}
-      className="py-14 mb-3 mt-3"
-    >
-      <h1 className="text-center text-primary text-3xl font-bold mb-8">
-        Executed Projects
-      </h1>
+  style={{
+    background: "linear-gradient(180deg, #219c97 0%, #176b63 100%)",
+    color: "white",
+    padding: "60px 0"
+  }}
+>
+  <div className="container mx-auto px-6">
+    <h1 className="text-center text-4xl font-bold mb-12">
+      Our Projects
+    </h1>
 
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="overflow-x-auto rounded-2xl shadow-2xl border border-gray-300 bg-gradient-to-b from-white to-gray-100"
-        >
-          <table className="min-w-full border-collapse text-sm text-gray-800">
-            <thead className="bg-gradient-to-r from-gray-800 to-teal-700 text-white text-md uppercase">
-              <tr>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Year Executed
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Project Name
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Packages
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Location of Project
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Client
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Type of Project
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Sq Ft
-                </th>
-              </tr>
-            </thead>
+    {projectsData.map((group, groupIndex) => (
+      <motion.div
+        key={group.year}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="mb-12"
+      >
+        <h2 className="text-2xl font-semibold mb-6 border-l-4 border-yellow-400 pl-3">
+          Year: {group.year}
+        </h2>
 
-            <tbody>
-              {projectsData.map((group, groupIndex) =>
-                group.projects.map((proj, index) => (
-                  <motion.tr
-                    key={`${group.year}-${index}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.05,
-                      ease: "easeOut",
-                    }}
-                    className={`border border-gray-300 ${
-                      index % 2 === 0 ? "bg-white" : "bg-gray-50"
-                    } hover:bg-teal-50 hover:shadow-md transition-all duration-300`}
-                  >
-                    {/* Year column only for first project of the year */}
-                    {index === 0 ? (
-                      <td
-                        rowSpan={group.projects.length}
-                        className="border border-gray-300 py-3 px-4 font-semibold text-gray-700 text-center bg-teal-100"
-                      >
-                        {group.year}
-                      </td>
-                    ) : null}
-                    <td className="border border-gray-300 py-3 px-4 font-medium">
-                      {proj.projectName}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.packages}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.location}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.client}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.typeOfProject}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.sqft}
-                    </td>
-                  </motion.tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </motion.div>
-      </div>
-    </section>
-     <section
-      style={{ backgroundColor: "rgb(180, 202, 202)" }}
-      className="py-14 mb-3 mt-3"
-    >
-      <h1 className="text-center text-primary text-3xl font-bold mb-8">
-        Ongoing Projects
-      </h1>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-3">
+          {group.projects.map((proj, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.04 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white/10 backdrop-blur-lg mb-1 p-6 rounded-2xl shadow-lg border border-white/30 hover:bg-white/15 transition duration-300"
+            >
+              <h3 className="text-lg font-bold text-yellow-300 mb-2">
+                {proj.projectName}
+              </h3>
 
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="overflow-x-auto rounded-2xl shadow-2xl border border-gray-300 bg-gradient-to-b from-white to-gray-100"
-        >
-          <table className="min-w-full border-collapse text-sm text-gray-800">
-            <thead className="bg-gradient-to-r from-gray-800 to-teal-700 text-white text-md uppercase">
-              <tr>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Year Executed
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Project Name
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Packages
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Location of Project
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Client
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Type of Project
-                </th>
-                <th className="border border-gray-400 py-3 px-4 text-left">
-                  Sq Ft
-                </th>
-              </tr>
-            </thead>
+              <p className="text-sm mb-1 text-white-100">
+                <span className="font-semibold text-white">Packages:</span>{" "}
+                {proj.packages}
+              </p>
+              <p className="text-sm mb-1 text-white-100">
+                <span className="font-semibold text-white">Location:</span>{" "}
+                {proj.location}
+              </p>
+              <p className="text-sm mb-1 text-white-100">
+                <span className="font-semibold text-white">Client:</span>{" "}
+                {proj.client}
+              </p>
+              <p className="text-sm mb-1 text-gray-100">
+                <span className="font-semibold text-white">Type:</span>{" "}
+                {proj.typeOfProject}
+              </p>
+              <p className="text-sm text-gray-100">
+                <span className="font-semibold text-white">Sq Ft:</span>{" "}
+                {proj.sqft}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
-            <tbody>
-              {ongoingProjectData.map((group, groupIndex) =>
-                group.projects.map((proj, index) => (
-                  <motion.tr
-                    key={`${group.year}-${index}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.05,
-                      ease: "easeOut",
-                    }}
-                    className={`border border-gray-300 ${
-                      index % 2 === 0 ? "bg-white" : "bg-gray-50"
-                    } hover:bg-teal-50 hover:shadow-md transition-all duration-300`}
-                  >
-                    {/* Year column only for first project of the year */}
-                    {index === 0 ? (
-                      <td
-                        rowSpan={group.projects.length}
-                        className="border border-gray-300 py-3 px-4 font-semibold text-gray-700 text-center bg-teal-100"
-                      >
-                        {group.year}
-                      </td>
-                    ) : null}
-                    <td className="border border-gray-300 py-3 px-4 font-medium">
-                      {proj.projectName}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.packages}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.location}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.client}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.typeOfProject}
-                    </td>
-                    <td className="border border-gray-300 py-3 px-4">
-                      {proj.sqft}
-                    </td>
-                  </motion.tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </motion.div>
-      </div>
-    </section>
+
     </main>
   );
 }

@@ -9,7 +9,7 @@ export default function Services() {
     <main>
       {/* Top banner section (kept same) */}
       <section>
-        <div className="about-section-1 about-sec-1-wrapper">
+        <div className="about-section-1 service-sec-1-wrapper">
           <div className="container">
             <div className="about-sec-1-content-wrap">
               <div>

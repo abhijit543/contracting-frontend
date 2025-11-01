@@ -1,6 +1,6 @@
 // Header.jsx
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import "./Common.css";
 export default function Header() {

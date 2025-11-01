@@ -16,28 +16,23 @@ import giis from "../../../assets/img/company-logos/logo6.png";
 
 export default function Clients() {
   const clients = [
-    { img: abInBev, name: "ABInBev" },
-    { img: intel, name: "Intel – SRR1 VTT2 LAB" },
-    { img: juniper, name: "Juniper Networks" },
-    { img: clarivate, name: "Clarivate" },
-    { img: oyo, name: "OYO" },
-    { img: pulse, name: "Pulse Secure" },
-    { img: giis, name: "Global Indian International School – Varthur, Bangalore" },
-    { img: giis, name: "Global Indian International School – Bhannargatta, Bangalore" },
-    { img: giis, name: "Global Indian International School – Balewadi, Pune" },
-    { img: giis, name: "Global Indian International School – Hadapsar, Pune" },
-    { img: giis, name: "Global Indian International School – Ahmedabad, Gujarat" },
-    { img: iqvia, name: "IQVIA – 5F" },
-    { img: iqvia, name: "IQVIA – BF 8F" },
-    { img: royaloak, name: "Royaloak Furnitures" },
-    { img: eurofins, name: "Eurofins Advinus" },
+    { img: abInBev },
+    { img: intel},
+    { img: juniper},
+    { img: clarivate},
+    { img: oyo},
+    { img: pulse},
+    { img: giis},
+    { img: iqvia},
+    { img: royaloak},
+    { img: eurofins},
   ];
 
   return (
     <>
       {/* --- Header Section --- */}
       <section id="clientsTopSection">
-        <div className="about-section-1 about-sec-1-wrapper">
+        <div className="about-section-1 client-sec-1-wrapper">
           <div className="container">
             <div className="about-sec-1-content-wrap">
               <div className="breadcrumb-wrap">
