@@ -2,7 +2,7 @@
 .contact-hero {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  /* black overlay */
-    url(../src/assets/img/contact-bg-img.jpg)
+    url(/src/assets/img/contact-bg-img.jpg)
       no-repeat top center;
   background-size: cover;
   color: white;
