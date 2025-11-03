@@ -173,3 +173,111 @@
       no-repeat top center;
   background-size: cover;
 }
+
+/* ✅ Thank You Message Styles */
+.thank-you-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.thank-you-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
+.thank-you-card h2 {
+  color: #2e7d32;
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.thank-you-card h6 {
+ color: #2e7d32;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.back-home-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background-color: #256028;
+}
+
+/* ✅ Animated Checkmark */
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 4px solid #2e7d32;
+  position: relative;
+  animation: popIn 0.5s ease;
+}
+
+.checkmark {
+  display: block;
+  width: 25px;
+  height: 50px;
+  border-right: 4px solid #2e7d32;
+  border-bottom: 4px solid #2e7d32;
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  transform: rotate(45deg);
+  animation: drawCheck 0.5s ease forwards 0.3s;
+}
+
+/* ✅ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drawCheck {
+  from { opacity: 0; height: 0; width: 0; }
+  to { opacity: 1; height: 50px; width: 25px; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.form-status-message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.form-status-message.error {
+  color: #d93025; /* red for error */
+}
+
+.form-status-message.success {
+  color: #0f9d58; /* green for success */
+}
+
+.form-status-message.info {
+  color: #fbbc05; /* yellowish for sending/loading */
+}

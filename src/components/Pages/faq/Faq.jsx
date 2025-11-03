@@ -1,9 +1,59 @@
 import { Link } from "react-router-dom";
 import sec8Heading from "../../../assets/img/sec-8-heading.png";
 import "./FAQSection.css"
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 const IMAGES = { sec8Heading };
 
 export default function FaqPage() {
+  const [formData, setFormData] = useState({
+      name: "",
+      phone: "",
+      message: "",
+    });
+    const [status, setStatus] = useState("");
+      const [submitted, setSubmitted] = useState(false);
+      const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.phone || !formData.message) {
+      setStatus("⚠️ Please fill in all fields.");
+      return;
+    }
+
+    if (!/^[0-9]{10}$/.test(formData.phone)) {
+      setStatus("📞 Enter a valid 10-digit phone number.");
+      return;
+    }
+
+    setStatus("⏳ Sending...");
+
+    emailjs
+      .send(
+        "service_862nhrr", // ✅ Your EmailJS Service ID
+        "template_qzm4la3", // ✅ Your EmailJS Template ID
+        {
+          from_name: formData.name,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "lszWWLLrkCYWnaXsL" // ✅ Your EmailJS Public Key
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setTimeout(() => setSubmitted(true), 1000);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          setStatus("❌ Failed to send message. Please try again later.");
+        }
+      );
+  };
   return (
     <main>
       {/* ---------- Section 1: Hero ---------- */}
@@ -30,18 +80,76 @@ export default function FaqPage() {
             <div className="row row-gap-5">
               
               {/* ---- Left Column (Quick Contact) ---- */}
-              <div className="col-lg-4">
-                <div className="faq-contact-wrapper">
-                  <p className="faq-contact-p">Quick Contact</p>
-                  <h4 className="faq-contact-h">Let&apos;s Start Your Project</h4>
-                  <form>
-                    <input type="text" placeholder="Your Name" className="faq-input" />
-                    <input type="tel" placeholder="Your Number" className="faq-input" />
-                    <textarea rows="4" placeholder="Your Message" className="faq-input"></textarea>
-                  </form>
-                  <button className="faq-contact-btn">Start Project</button>
-                </div>
-              </div>
+            {/* ---- Left Column (Quick Contact) ---- */}
+<div className="col-lg-4">
+  <div className="faq-contact-wrapper">
+    <p className="faq-contact-p">Quick Contact</p>
+
+    {!submitted ? (
+      <>
+        <h4 className="faq-contact-h">Let&apos;s Start Your Project</h4>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Write your message..."
+            rows={4}
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+
+          {/* 👇 Status Message (visible for errors, loading, or success) */}
+          {status && (
+            <p
+              className={`form-status-message ${
+                status.includes("⚠️") || status.includes("📞")
+                  ? "error"
+                  : status.includes("✅")
+                  ? "success"
+                  : "info"
+              }`}
+            >
+              {status}
+            </p>
+          )}
+
+          <button type="submit" className="faq-contact-btn">
+            Start Project
+          </button>
+        </form>
+      </>
+    ) : (
+      <div className="thank-you-wrapper">
+        <div className="thank-you-card">
+          <div className="checkmark-circle">
+            <div className="checkmark"></div>
+          </div>
+          <h2>Thank You!</h2>
+          <h6>Your message has been sent successfully. We’ll get back to you shortly.</h6>
+          <Link to="/" className="back-home-btn">
+            Go Back Home
+          </Link>
+        </div>
+      </div>
+    )}
+  </div>
+</div>
 
               {/* ---- Right Column (FAQs) ---- */}
               <div className="col-lg-8">

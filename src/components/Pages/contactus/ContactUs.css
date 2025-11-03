@@ -202,7 +202,7 @@
 .checkmark {
   position: absolute;
   left: 24px;
-  top: 38px;
+  top: 10px;
   width: 20px;
   height: 40px;
   border-right: 5px solid #219c97;
